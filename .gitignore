@@ -41,3 +41,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+.metadata
+Hadoop/bin
+Hadoop_Test/bin
+java_Test/bin
+
