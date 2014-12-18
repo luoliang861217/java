@@ -22,12 +22,16 @@ public class Test {
 	static final String INPUT_DIR = "hdfs://hadoop-master:9000/mobile/input/test.txt";
 	
 	public static void main(String[] args) throws Exception {
+		
 		FileSystem fs = getFileSystem();
 		if(fs.exists(new Path(OUTPUT_DIR))){
 			fs.delete(new Path(OUTPUT_DIR));
 		}
 		Configuration conf = new Configuration();
 		Job job = new Job(conf,Test.class.getSimpleName());
+		
+		job.setJarByClass(Test.class);
+		
 		FileInputFormat.setInputPaths(job, INPUT_DIR);
 		job.setInputFormatClass(TextInputFormat.class);
 		
@@ -35,8 +39,11 @@ public class Test {
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(MobileAPI.class);
 		
-		job.setPartitionerClass(HashPartitioner.class);
-		job.setNumReduceTasks(1);
+//		job.setPartitionerClass(HashPartitioner.class);
+//		job.setNumReduceTasks(1);
+		
+		job.setPartitionerClass(MyPartition.class);
+		job.setNumReduceTasks(2);
 		
 		job.setReducerClass(Reduce.class);
 		job.setOutputKeyClass(Text.class);
