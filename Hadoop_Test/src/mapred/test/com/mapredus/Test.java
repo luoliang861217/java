@@ -21,8 +21,8 @@ import org.apache.hadoop.mapreduce.lib.partition.HashPartitioner;
 import com.sun.org.apache.xpath.internal.axes.HasPositionalPredChecker;
 
 public class Test {
-	static final String OUTPUT_DIR = "hdfs://hadoop-master:9000/output/";
-	static final String INPUT_DIR = "hdfs://hadoop-master:9000/input/";
+	static final String OUTPUT_DIR = "hdfs://hadoop-master:9000/mapreduce/output/";
+	static final String INPUT_DIR = "hdfs://hadoop-master:9000/mapreduce/input/test.txt";
 	
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
