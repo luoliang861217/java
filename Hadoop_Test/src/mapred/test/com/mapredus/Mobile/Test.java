@@ -18,7 +18,7 @@ import com.sun.org.apache.xpath.internal.axes.HasPositionalPredChecker;
 
 public class Test {
 	
-	static final String OUTPUT_DIR = "hdfs://hadoop-master:9000/mobile/output/";
+	static final String OUTPUT_DIR = "hdfs://hadoop-master:9000/mobile/ouput/";
 	static final String INPUT_DIR = "hdfs://hadoop-master:9000/mobile/input/test.txt";
 	
 	public static void main(String[] args) throws Exception {
