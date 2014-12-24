@@ -18,8 +18,8 @@ import org.apache.hadoop.mapred.lib.HashPartitioner;
 
 public class Test {
 	static final String ROOT_PATH = "hdfs://hadoop-master:9000/";
-	static final String INPUT_PATH = "hdfs://hadoop-master:9000/input/test.txt";
-	static final String OUTPUT_PATH = "hdfs://hadoop-master:9000/ouput/";
+	static final String INPUT_PATH = "hdfs://hadoop-master:9000/oldmapreduce/input/test.txt";
+	static final String OUTPUT_PATH = "hdfs://hadoop-master:9000/oldmapreduce/ouput/";
 	static final Configuration conf = new Configuration();
 	
 	public static void main(String[] args) throws Exception {

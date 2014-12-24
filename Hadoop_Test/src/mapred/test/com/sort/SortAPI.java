@@ -21,9 +21,12 @@ public class SortAPI implements WritableComparable<SortAPI> {
 		this.second = second;
 	}
 
+	/**
+	 * 排序就在这里， * -1 表明第一列倒序。得出当：this.first - o.first > 0 升序，小于0倒序
+	 */
 	@Override
 	public int compareTo(SortAPI o) {
-		long mis = this.first - o.first;
+		long mis = (this.first - o.first) * -1;
 		if(mis != 0 ){
 			return (int)mis;
 		}
@@ -58,6 +61,4 @@ public class SortAPI implements WritableComparable<SortAPI> {
 		}
 		return false;
 	}
-	
-	
 }
