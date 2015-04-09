@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<configuration isok="true">
+	<property>
+	  <name>hadoop.job.history.location</name>
+	  <value></value>
+	  <description> If job tracker is static the history files are stored 
+	  in this single well known place. If No value is set here, by default,
+	  it is in the local file system at ${hadoop.log.dir}/history.
+	  </description>
+	</property>
+	<property>
+	  <name>hadoop.job.history.user.location</name>
+	  <value></value>
+	  <description> User can specify a location to store the history files of 
+	  a particular job. If nothing is specified, the logs are stored in 
+	  output directory. The files are stored in "_logs/history/" in the directory.
+	  User can stop logging by giving the value "none". 
+	  </description>
+	</property>
+</configuration>

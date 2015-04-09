@@ -9,24 +9,26 @@ import org.apache.hadoop.io.WritableComparator;
 
 public class SortAPI implements WritableComparable<SortAPI> {
 
+	/**
+	 * 第一列数据
+	 */
 	public Long first;
+	/**
+	 * 第二列数据
+	 */
 	public Long second;
 	
-	public SortAPI(){
-		
-	}
-	
+	public SortAPI(){}
 	public SortAPI(long first,long second){
 		this.first = first;
 		this.second = second;
 	}
-
 	/**
 	 * 排序就在这里， * -1 表明第一列倒序。得出当：this.first - o.first > 0 升序，小于0倒序
 	 */
 	@Override
 	public int compareTo(SortAPI o) {
-		long mis = (this.first - o.first) * -1;
+		long mis = (this.first - o.first) * -1 ;
 		if(mis != 0 ){
 			return (int)mis;
 		}
@@ -60,5 +62,9 @@ public class SortAPI implements WritableComparable<SortAPI> {
 			return this.first == o.first && this.second == o.second;
 		}
 		return false;
+	}
+	@Override
+	public String toString() {
+		return "first:" + this.first + ";second:" + this.second;
 	}
 }

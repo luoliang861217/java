@@ -61,6 +61,10 @@ public class SortAPI implements WritableComparable<SortAPI> {
 	
 	@Override
 	public String toString() {
-		return this.first + ";" + this.second;
+		return "Êä³ö£º" + this.first + ";" + this.second;
 	}
+	public String toString2(SortAPI o1) {
+		return "Êä³ö£º" + this.first + ";" + this.second;
+	}
+	
 }

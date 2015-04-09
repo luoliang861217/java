@@ -9,15 +9,7 @@ import org.apache.hadoop.mapreduce.Mapper.Context;
 
 
 
-public class MyMapper extends Mapper<LongWritable, Text, SortAPI, LongWritable> {
-	
-//	3 3
-//	3 2
-//	3 1
-//	2 2
-//	2 1
-//	1 1
-	
+public class MyMapper extends Mapper<LongWritable, Text, SortAPI, LongWritable> {	
 	@Override
 	protected void map(LongWritable key, Text value,Context context) throws IOException, InterruptedException {
 		String[] splied = value.toString().split("\t");
@@ -28,6 +20,5 @@ public class MyMapper extends Mapper<LongWritable, Text, SortAPI, LongWritable> 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-	}
-	
+	}	
 }

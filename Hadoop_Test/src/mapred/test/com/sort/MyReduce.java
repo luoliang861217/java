@@ -12,6 +12,7 @@ public class MyReduce extends Reducer<SortAPI, LongWritable, LongWritable, LongW
 
 	@Override
 	protected void reduce(SortAPI key, Iterable<LongWritable> values, Context context) throws IOException, InterruptedException {
+		System.out.println(key.toString());
 		context.write(new LongWritable(key.first), new LongWritable(key.second));
 	}
 	
